@@ -4,9 +4,9 @@ $message = "cvtvbvfbvfbfqfrrtnnmqqmcqqpfplfpphchpcpcfppmwwhhscccjwjnnctcjtjgjbgj
 /**
  * @param string $message
  * @param int $length
- * @return int|string|void
+ * @return int|null
  */
-function decode(string $message, int $length)
+function decode(string $message, int $length) : ?int
 {
     $stack = [];
     foreach (str_split($message) as $pos => $char)
@@ -23,6 +23,8 @@ function decode(string $message, int $length)
             array_shift($stack);
         }
     }
+
+    return null;
 }
 
 echo "Part 1: " . decode($message, 4) . "<br>";
